@@ -1,5 +1,11 @@
+import socket
+
 def resolve_dns(target):
-    return None
+    try:
+        ip = socket.gethostbyname(target)
+        return ip
+    except socket.gaierror:
+        return None
 
 def scan_ports(ip):
     return []
